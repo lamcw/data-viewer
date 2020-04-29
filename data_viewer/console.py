@@ -13,8 +13,12 @@ def main():
         description="View files in human-readable format."
     )
     arg_parser.add_argument(
-        "file", metavar="FILE", default=sys.stdin, type=argparse.FileType(), nargs="*",
-        help="If not supplied or '-', read from stdin"
+        "file",
+        metavar="FILE",
+        default=sys.stdin,
+        type=argparse.FileType(),
+        nargs="*",
+        help="If not supplied or '-', read from stdin",
     )
     arg_parser.add_argument(
         "-i",

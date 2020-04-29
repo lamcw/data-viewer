@@ -1,6 +1,6 @@
 # data-viewer
 
-data-viewer is a Python tool for serializing and deserializing data.
+`data-viewer` is a Python tool for serializing and deserializing data.
 
 ## Installation
 
