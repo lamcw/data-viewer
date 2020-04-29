@@ -1,0 +1,6 @@
+- name: John Doe
+  address: Here
+  phone_number: "123456"
+- name: Foo Bar
+  address: There
+  phone_number: "654321"
