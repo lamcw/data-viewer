@@ -18,7 +18,7 @@ def main():
         default=sys.stdin,
         type=argparse.FileType(),
         nargs="*",
-        help="If not supplied or '-', read from stdin",
+        help="if not supplied or '-', read from stdin",
     )
     arg_parser.add_argument(
         "-i",
@@ -52,8 +52,8 @@ def main():
         with file as f:
             data = parser.parse(f.read())
             serializer = PersonSerializer(data=data)
-            ppl = serializer.create()
-            print("Python native data types:")
-            print(ppl)
+            people = serializer.create()
+            print("Deserialized:")
+            print(people)
             print(f"{args.output_format}:")
             print(renderer.render(serializer.data))

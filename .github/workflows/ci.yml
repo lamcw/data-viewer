@@ -52,5 +52,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
       - name: Lint with flake8
         run: poetry run flake8 .
+      - name: Lint with pydocstyle
+        run: poetry run pydocstyle .
       - name: Code quality check
         run: poetry run black . --check

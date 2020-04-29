@@ -35,6 +35,11 @@ def test_person_serializer_serialize(simple_person):
     }
 
 
+def test_person_serializer_empty_instance():
+    serializer = PersonSerializer()
+    assert serializer.data is None
+
+
 def test_person_serializer_serialize_list(person_list):
     serializer = PersonSerializer(person_list)
     assert serializer.data == [
