@@ -13,18 +13,17 @@ jobs:
           python-version: 3.8
       - name: Install poetry
         uses: dschep/install-poetry-action@v1.3
-      - name: Cache poetry venv
-        uses: actions/cache@v1
-        id: cache
         with:
-          path: .venv
-          key: poetry-${{ hashFiles('**/poetry.lock') }}
-          restore-keys: poetry-${{ hashFiles('**/poetry.lock') }}
+          create_virtualenvs: true
       - name: Config poetry
         run: poetry config virtualenvs.in-project true
+      - name: Cache venv
+        uses: actions/cache@v1
+        with:
+          path: .venv
+          key: poetry-${{ hashFiles('poetry.lock') }}
       - name: Install dependencies
         run: poetry install
-        if: steps.cache.outputs.cache-hit != 'true'
       - name: Test with pytest
         run: poetry run pytest
 
@@ -38,18 +37,17 @@ jobs:
           python-version: 3.8
       - name: Install poetry
         uses: dschep/install-poetry-action@v1.3
-      - name: Cache poetry venv
-        uses: actions/cache@v1
-        id: cache
         with:
-          path: .venv
-          key: poetry-${{ hashFiles('**/poetry.lock') }}
-          restore-keys: poetry-${{ hashFiles('**/poetry.lock') }}
+          create_virtualenvs: true
       - name: Config poetry
         run: poetry config virtualenvs.in-project true
+      - name: Cache venv
+        uses: actions/cache@v1
+        with:
+          path: .venv
+          key: poetry-${{ hashFiles('poetry.lock') }}
       - name: Install dependencies
         run: poetry install
-        if: steps.cache.outputs.cache-hit != 'true'
       - name: Lint with flake8
         run: poetry run flake8 .
       - name: Lint with pydocstyle

@@ -20,7 +20,7 @@ $ pip install data_viewer-0.1.0-py3-none-any.whl
 $ cat foo.json
 [
   {
-    "foo" : "bar"
+    "foo": "bar"
   }
 ]
 $ data_viewer -i json -o yaml foo.json
