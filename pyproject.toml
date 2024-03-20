@@ -11,7 +11,7 @@ data-viewer = "data_viewer.console:main"
 [tool.poetry.dependencies]
 python = "^3.8"
 dacite = "^1.4.0"
-pyyaml = "^5.3.1"
+pyyaml = "^5.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
